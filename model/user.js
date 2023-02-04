@@ -1,7 +1,10 @@
 const mongoose=require('mongoose');
 
 const userSchema=new mongoose.Schema({
-    email:{
+    username:{
+        type:String
+    },
+    userid:{
         type:String,
         required:true,
         unique:true
@@ -9,6 +12,9 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    avatar:{
+        type:String
     }
 },{
     timestamps:true
