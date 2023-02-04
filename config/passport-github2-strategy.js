@@ -2,12 +2,12 @@ const passport=require('passport');
 const githubStrategy=require('passport-github2').Strategy;
 const UserDB=require('../model/user');
 const crypto=require('crypto');
-
+const dotenv=require('dotenv').config();
 
 passport.use(new githubStrategy({
-    clientID:"61970cdace94d924410c",
-    clientSecret:"a96bf1e535527199be7d9afa91cf6b3601846f3f",
-    callbackURL:"http://localhost:8000/auth/github/callback",
+    clientID:process.env.clientID,
+    clientSecret:process.env.clientSecret,
+    callbackURL:process.env.callbackURL,
     passReqToCallback:true
 }, async function(req,accessToken,refreshToken,profile,done){
     // console.log(profile);

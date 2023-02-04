@@ -6,7 +6,9 @@ const githubStrategy=require('./config/passport-github2-strategy');
 const expressSession=require('express-session');
 const flash=require('connect-flash');
 const coustomMware=require('./config/middleware');
-const port=8000;
+const dotenv=require('dotenv').config();
+
+const port=process.env.Port || 8000;
 
 const app=express();
 
